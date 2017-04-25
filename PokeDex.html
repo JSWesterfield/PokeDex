@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PokeDex</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html, intial-scale=1">
+  <!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="images/tab-icon.png"> 
+
+  <!--style/css--><!-- place in a seperate script later-->
+  <style type="text/css">
+
+    #pokeball {
+      width: 20px;
+      height: 20px;
+    }
+
+    #snorlax {
+      width: 10px;
+      height: 10px;
+      border-left: solid black 2px;
+    }
+
+    .info {
+      text-align: left;
+    }
+
+    .title {
+      border-bottom: 1px solid #dedede;
+      margin-bottom: 2px;
+    }
+
+    .btn-electric {
+      background-color: yellow;
+    }
+
+    .btn-rock {
+      background-color: grey;
+    }
+/*
+    #hp {
+      background-color: lime-green;
+    }
+
+    #special-attack {
+      background-color: orange;
+    }
+
+    #defense {
+      background-color: orange;
+    }
+
+    #speed {
+      background-color: red;
+    }
+    */
+    .prog-bar {
+      margin-right: 10px;
+    }
+
+    #center-div {
+      text-align: center;
+    }
+
+
+    progress[value]::-webkit-progress-value {
+      background-image:
+      -webkit-linear-gradient(-45deg, 
+       transparent 33%, rgba(0, 0, 0, .1) 33%, 
+       rgba(0,0, 0, .1) 66%, transparent 66%),
+      -webkit-linear-gradient(top, 
+       rgba(255, 255, 255, .25), 
+       rgba(0, 0, 0, .25)),
+      -webkit-linear-gradient(left, #09c, #f44);
+
+      border-radius: 2px; 
+      background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="images\pokeball.png" id="pokeball" style="display: inline-block;">
+          <span style="display: inline-block;">PokeDex</span>
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Random Pokemon</button>
+      </form>
+    </div>
+  </nav>
+
+  <!--  -->
+  <div id="center-div">
+    <div id="lapras">
+      <img src="https://lh3.googleusercontent.com/-5bk6_cQEvUA/WH_IjtLmwrI/AAAAAAAAr8A/mcfZAPNVelUCi49-cR9-jIyyfVZwTJr_gCJoC/w800-h800/131Lapras_Pokemon_Mystery_Dungeon_Explorers_of_Time_and_Darkness.png" width="500" height="500">
+    </div>
+  </div>
+  <div >
+    <div>
+      <h2 class="title"><span class="info"><b>Info<b><span></h2>
+    </div>
+    <div>
+      <p>No.: #131 </p>
+      <p>Name: Lapras</p>
+      <p>Type: <img src="images/water-icon.jpg" height="18" width="18"><button class="btn btn-primary">Water</button> <button class="btn btn-secondary">Ice</button></p>
+      <p>Weakness: <button class="btn btn-electric">Electric</button> <button class="btn btn-warning">Fighting</button> <button class="btn btn-success">Grass</button> <button class="btn btn-rock">Rock</button></p>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+  aria-valuemin="0" aria-valuemax="100" style="width:40%">
+      <p>HP: <b>130</b><progress value="75" max="100" id="hp" class="prog-bar">
+      </progress></p>
+      <p>Attack: <b>85</b><progress value="56" max="100" id="attack" class="prog-bar">
+      </progress></p>
+      <p>Defense: <b>80</b><progress value="48" max="100" id="defense" class="prog-bar">
+      </progress></p>
+      <p>Special Attk: <b>85</b><progress value="52" max="100" id="special-attack" class="prog-bar">
+      </progress></p>
+      <p>Speed: <b>60</b><progress value="35" max="100" id="speed" class="prog-bar">
+      </progress></p>
+    </div>
+
+    <p>Moves: </p>
+
+    <div class="colset">
+      <div class="col span-8 ">
+        <h2>Base stats</h2>
+        <table class="vitals-table">
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <td class="num-total"><b>535</b></td>
+              <th class="cell-barchart"></th>
+              <th>Min</th>
+              <th>Max</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <th>HP</th>
+              <td class="num">130</td>
+              <td class="cell-barchart">
+                <div style="width:72.22%;"                class="barchart-bar barchart-high "></div>
+              </td>
+              <td class="num">370</td>
+              <td class="num">464</td>
+            </tr>
+            <tr>
+              <th>Attack</th>
+              <td class="num">85</td>
+              <td class="cell-barchart">
+                <div style="width:47.22%;"                class="barchart-bar barchart-med "></div>
+              </td>
+              <td class="num">157</td>
+              <td class="num">295</td>
+            </tr>
+            <tr>
+              <th>Defense</th>
+              <td class="num">80</td>
+              <td class="cell-barchart">
+                <div style="width:44.44%;" class="barchart-bar barchart-med "></div>
+              </td>
+              <td class="num">148</td>
+              <td class="num">284</td>
+            </tr>
+            <tr>
+              <th>Sp. Atk</th>
+              <td class="num">85</td>
+              <td class="cell-barchart">
+              <div style="width:47.22%;" class="barchart-bar barchart-med "></div>
+              </td>
+              <td class="num">157</td>
+              <td class="num">295</td>
+            </tr>
+            <tr>
+              <th>Sp. Def</th>
+              <td class="num">95</td>
+              <td class="cell-barchart">
+                <div style="width:52.78%;" class="barchart-bar barchart-med "></div>
+              </td>
+              <td class="num">175</td>
+              <td class="num">317</td>
+            </tr>
+            <tr>
+              <th>Speed</th>
+              <td class="num">60</td>
+              <td class="cell-barchart">
+                <div style="width:33.33%;"                class="barchart-bar barchart-low "></div>
+              </td>
+              <td class="num">112</td>
+              <td class="num">240</td>
+            </tr>
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+    </body>
+    </html>
